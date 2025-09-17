@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from database import Base, engine
-from routers import clientes, status
+from routers import clientes, status, pratos
 
 
 app = FastAPI()
@@ -10,6 +10,7 @@ Base.metadata.create_all(engine)
 
 app.include_router(clientes.router)
 app.include_router(status.router)
+app.include_router(pratos.router)
 
 
 
